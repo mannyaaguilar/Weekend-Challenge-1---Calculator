@@ -9,25 +9,32 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
 
+
         Scanner sc = new Scanner(System.in);
+        boolean ask = true;
+        while (ask) {
+            System.out.println("Would you like to use the calculator?");
 
-        System.out.println("Welcome to Java Calculator");
+            String userAnswer = sc.nextLine();
+            if (userAnswer.equals("Yes")); {
 
-        String[] questions = {
 
-                "Please enter the first number: ",
-                "Please enter the operator you want to use(+, -, *, /): ",
-                "Please enter the second number: ",
-        };
+                        ask = true;
+            String[] questions = {
 
-        List<String> answers = new ArrayList<>();
+                    "Please enter the first number: ",
+                    "Please enter the operator you want to use(+, -, *, /): ",
+                    "Please enter the second number: ",
+            };
 
-        for (int i = 0; i < questions.length; i++) {
-            System.out.println(questions[i]);
-            String userEntry = sc.nextLine();
-            answers.add(userEntry);
+            List<String> answers = new ArrayList<>();
 
-        }
+            for (int i = 0; i < questions.length; i++) {
+                System.out.println(questions[i]);
+                String userEntry = sc.nextLine();
+                answers.add(userEntry);
+
+            }
             String firstNum = answers.get(0);
             int fstNumber = Integer.parseInt(firstNum);
 
@@ -36,23 +43,24 @@ public class Main {
 
             String operator = answers.get(1);
 
-        if (operator.equals("+"))
-        {
-            System.out.println("Your Answer is "+(fstNumber + scndNumber));
-        }
-        else if (operator.equals("-"))
-        {
-            System.out.println("Your Answer is "+(fstNumber - scndNumber));
-        }
-        else if (operator.equals("*"))
-        {
-            System.out.println("Your Answer is "+(fstNumber * scndNumber));
-        }
-        else if (operator.equals("/"))
-        {
-            System.out.println("Your Answer is "+(fstNumber / scndNumber));
+            if (operator.equals("+")) {
+                System.out.println("Your Answer is " + (fstNumber + scndNumber));
+            } else if (operator.equals("-")) {
+                System.out.println("Your Answer is " + (fstNumber - scndNumber));
+            } else if (operator.equals("*")) {
+                System.out.println("Your Answer is " + (fstNumber * scndNumber));
+            } else if (operator.equals("/")) {
+                System.out.println("Your Answer is " + (fstNumber / scndNumber));
+            } else
+
+
+                    ask = false;
+
+                        System.out.println("Thank you for using the HR Salary Calculator");
+
+                    }
+
+
         }
     }
-
 }
-
