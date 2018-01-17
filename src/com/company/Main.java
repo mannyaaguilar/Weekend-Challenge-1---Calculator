@@ -9,17 +9,12 @@ public class Main {
     public static void main(String[] args) {
         // write your code here
 
-
-        Scanner sc = new Scanner(System.in);
         boolean ask = true;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to HR Salary Calculator!");
+
         while (ask) {
-            System.out.println("Would you like to use the calculator?");
 
-            String userAnswer = sc.nextLine();
-            if (userAnswer.equals("Yes")); {
-
-
-                        ask = true;
             String[] questions = {
 
                     "Please enter the first number: ",
@@ -51,16 +46,21 @@ public class Main {
                 System.out.println("Your Answer is " + (fstNumber * scndNumber));
             } else if (operator.equals("/")) {
                 System.out.println("Your Answer is " + (fstNumber / scndNumber));
-            } else
+            }
+            {
+                System.out.println("Would you like to continue using the calculator?");
+                String userAnswer = sc.nextLine();
+                if (userAnswer.equalsIgnoreCase("Yes")|| userAnswer.equalsIgnoreCase("ye")|| userAnswer.equalsIgnoreCase("y")){
 
-
+                    ask = true;
+                } else {
                     ask = false;
 
-                        System.out.println("Thank you for using the HR Salary Calculator");
-
-                    }
+                    System.out.println("Thank you for using the HR Salary Calculator!");
 
 
+                }
+            }
         }
     }
 }
